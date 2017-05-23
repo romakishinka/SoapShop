@@ -1,42 +1,28 @@
 package ru.vsu.soapshop.model;
 
-import javafx.util.Pair;
-
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 /**
  * Created by Александр on 18.05.2017.
  */
 @Entity
-@Table(name ="orders")
+@Table(name = "orders")
 public class Orders {
 
     @Id
     @Column(name = "order_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long orderId;
-    public Long getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(Long orderId) {
-        this.orderId = orderId;
-    }
 
     @Column(name = "user_id")
     private Long userId;
 
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
     @Column(name = "status")
     private int status;
+
+    @OneToMany(mappedBy = "order", fetch= FetchType.EAGER)
+    private List<OrderItems> orderItems;
 
     public int getStatus() {
         return status;
@@ -46,8 +32,35 @@ public class Orders {
         this.status = status;
     }
 
-    /*@ManyToMany
-    @JoinTable(name = "order_items", joinColumns = @JoinColumn(name = "order_id"),
-            inverseJoinColumns = @JoinColumn(name = "product_id"))
-    private Set<Pair<Long,Long>> products;*/
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public Long getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(Long orderId) {
+        this.orderId = orderId;
+    }
+
+    public int getScore(){
+        int result=0;
+        for (OrderItems item:orderItems) {
+            result+=item.getScore();
+        }
+        return result;
+    }
+
+    public List<OrderItems> getOrderItems() {
+        return orderItems;
+    }
+
+    public void setOrderItems(List<OrderItems> orderItems) {
+        this.orderItems = orderItems;
+    }
 }
