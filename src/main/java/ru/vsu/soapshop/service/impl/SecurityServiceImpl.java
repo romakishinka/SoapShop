@@ -1,4 +1,4 @@
-package ru.vsu.soapshop.service;
+package ru.vsu.soapshop.service.impl;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,7 +8,9 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.stereotype.Service;
+import ru.vsu.soapshop.service.SecurityService;
 
 /**
  * Created by Александр on 18.05.2017.
@@ -26,7 +28,8 @@ public class SecurityServiceImpl implements SecurityService {
 
     @Override
     public String findLoggedInUsername() {
-        Object userDetails = SecurityContextHolder.getContext().getAuthentication().getDetails();
+        Object userDetails = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Object context = SecurityContextHolder.getContext();
         if (userDetails instanceof UserDetails) {
             return ((UserDetails) userDetails).getUsername();
         }

@@ -1,6 +1,7 @@
 package ru.vsu.soapshop.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by Александр on 18.05.2017.
@@ -8,7 +9,7 @@ import javax.persistence.*;
 @Entity
 @Table(name ="product")
 public class Product {
-    private int productId;
+    private Long productId;
     private String productName;
     private int price;
     private String photo;
@@ -16,11 +17,12 @@ public class Product {
 
     @Id
     @Column(name = "product_id")
-    public int getProductId() {
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    public Long getProductId() {
         return productId;
     }
 
-    public void setProductId(int productId) {
+    public void setProductId(Long productId) {
         this.productId = productId;
     }
 

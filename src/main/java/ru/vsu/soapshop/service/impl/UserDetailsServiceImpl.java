@@ -1,4 +1,4 @@
-package ru.vsu.soapshop.service;
+package ru.vsu.soapshop.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.transaction.annotation.Transactional;
-import ru.vsu.soapshop.dao.UserDao;
+import ru.vsu.soapshop.repository.UserRepository;
 import ru.vsu.soapshop.model.Role;
 import ru.vsu.soapshop.model.User;
 
@@ -19,12 +19,12 @@ import java.util.Set;
  */
 public class UserDetailsServiceImpl implements UserDetailsService {
     @Autowired
-    private UserDao userDao;
+    private UserRepository userRepository;
 
     @Override
     @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userDao.findByUsername(username);
+        User user = userRepository.findByUsername(username);
 
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
 

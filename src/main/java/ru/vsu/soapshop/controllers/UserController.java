@@ -12,6 +12,7 @@ import ru.vsu.soapshop.service.SecurityService;
 import ru.vsu.soapshop.service.UserService;
 import ru.vsu.soapshop.validator.UserValidator;
 
+
 /**
  * Created by Александр on 19.05.2017.
  */
@@ -29,7 +30,8 @@ public class UserController {
 
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
     public String registration(Model model) {
-        model.addAttribute("userForm", new User());
+        User user = new User();
+        model.addAttribute("userForm", user);
 
         return "registration";
     }
@@ -62,13 +64,25 @@ public class UserController {
         return "login";
     }
 
-    @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
-    public String welcome(Model model) {
-        return "welcome";
-    }
-
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public String admin(Model model) {
         return "admin";
+    }
+
+    @RequestMapping(value ={"/" ,"/main"}, method = RequestMethod.GET)
+    public String main(Model model) {
+        return "main";
+    }
+
+
+
+    @RequestMapping(value = "/about", method = RequestMethod.GET)
+    public String about(Model model) {
+        return "about";
+    }
+
+    @RequestMapping(value = "/user_orders", method = RequestMethod.GET)
+    public String userOrders(Model model) {
+        return "user_orders";
     }
 }
