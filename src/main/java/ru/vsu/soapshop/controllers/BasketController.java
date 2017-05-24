@@ -18,6 +18,7 @@ import ru.vsu.soapshop.service.impl.SecurityServiceImpl;
  * Created by Александр on 23.05.2017.
  */
 @Controller
+@RequestMapping(value="/basket")
 public class BasketController {
 
     @Autowired
@@ -32,7 +33,7 @@ public class BasketController {
     @Autowired
     UserService userService;
 
-    @RequestMapping(value = "/basket", method = RequestMethod.GET)
+    @RequestMapping(value = "", method = RequestMethod.GET)
     public String basket(Model model) {
         String userName = securityService.findLoggedInUsername();
         Orders basket = orderService.findUserBasket(userService.findByUsername(userName).getId());
@@ -40,7 +41,7 @@ public class BasketController {
         return "basket";
     }
 
-    @RequestMapping(value = "/basket/{orderItemId}", method = RequestMethod.POST)
+    @RequestMapping(value = "/{orderItemId}", method = RequestMethod.POST)
     public String changeItem(@PathVariable("orderItemId") Long itemId, @RequestParam("amount") int amount) {
         if (amount <= 0)
             orderItemsService.deleteOrderItems(itemId);
@@ -53,13 +54,14 @@ public class BasketController {
         return "redirect:/basket";
     }
 
-    @RequestMapping(value = "/basket/{orderItemId}/delete", method = RequestMethod.GET)
+
+    @RequestMapping(value = "/{orderItemId}/delete", method = RequestMethod.GET)
     public String deleteItem(@PathVariable("orderItemId") Long itemId) {
         orderItemsService.deleteOrderItems(itemId);
         return "redirect:/basket";
     }
 
-    @RequestMapping(value = "/basket/toorder", method = RequestMethod.GET)
+    @RequestMapping(value = "/toorder", method = RequestMethod.GET)
     public String basketToOrder() {
         String userName = securityService.findLoggedInUsername();
         Orders basket = orderService.findUserBasket(userService.findByUsername(userName).getId());

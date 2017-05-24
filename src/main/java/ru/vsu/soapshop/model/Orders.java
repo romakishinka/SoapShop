@@ -24,6 +24,20 @@ public class Orders {
     @OneToMany(mappedBy = "order", fetch= FetchType.EAGER)
     private List<OrderItems> orderItems;
 
+    @ManyToOne
+    @JoinColumn(name ="user_id",insertable = false, updatable = false)
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+
+
     public int getStatus() {
         return status;
     }

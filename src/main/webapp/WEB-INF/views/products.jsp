@@ -22,19 +22,19 @@
 <!-- HEADER-NAV -->
 <jsp:include page="mainHeader.jsp"/>
 
-<div id="content">
+<div class="container">
     <c:forEach items="${products}" var="product">
         <form action="${contextPath}/products?code=${product.productId}"
               method="POST">
             <div class="item_box">
                 <h3 class="item_title">${product.productName}</h3>
-                <img src="${product.photo}">
-                <p>Цена: <span class="item_price">${product.price}</span>$</p>
+                <div class="gallery"><img src="${product.photo}"></div>
+                <p class ="price">Цена: <span class="item_price">${product.price}</span>P</p>
                     <%--<input type="hidden" name="paramName" value="${product.productId}"/>--%>
                     <%--<input type="hidden" name="param" value="${param}"/>--%>
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <%--<input type="text" name="amount" value="1"/>--%>
-                <input type="submit"  value="Добавить">
+                <input type="submit"  class="button-ss" value="Добавить">
 
             </div>
         </form>

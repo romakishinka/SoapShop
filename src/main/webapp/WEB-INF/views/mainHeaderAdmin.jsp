@@ -33,7 +33,7 @@
                     <a href="#">Сотрудничество</a>
                     <a href="${contextPath}/about">О нас</a>
                     <a href="${contextPath}/admin/products">Продукты: создать/изменить</a>
-                    <a href="${contextPath}/about/users">Пользователи</a>
+                    <a href="${contextPath}/admin/users">Пользователи</a>
                 </nav>
                 <nav class="h-nav pull-right">
                     <a href="${contextPath}/userOrders">${pageContext.request.userPrincipal.name}</a>

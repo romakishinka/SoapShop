@@ -12,26 +12,25 @@
 </head>
 <body>
 <jsp:include page="mainHeader.jsp"/>
-<div id="content">
-    <p>Заказ номер ${basket.orderId}</p>
+<div class="container">
+    <h2>Заказ номер ${basket.orderId}</h2>
     <c:forEach items="${basket.getOrderItems()}" var="item">
         <form action="${contextPath}/basket/${item.id}"  method="POST">
             <div class="item_box">
                 <h3 class="item_title">${item.product.getProductName()}</h3>
                 <p>Стоимость: ${item.getScore()} </p>
-                <input type="text" name ="amount" value="${item.amount}">
-                    <%--<input type="hidden" name="paramName" value="${product.productId}"/>--%>
-                    <%--<input type="hidden" name="param" value="${param}"/>--%>
+                <div>
+                    <p>Количество:</p> <input type="text" class="input_field" name ="amount" value="${item.amount}">
+                </div>
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                    <%--<input type="text" name="amount" value="1"/>--%>
-                <input type="submit"  value="Изменить">
-                <a href="${contextPath}/basket/${item.id}/delete">Удалить</a>
+                <input type="submit" class="button-ss" value="Изменить">
+                <a class = "link-ss" href="${contextPath}/basket/${item.id}/delete">Удалить</a>
             </div>
         </form>
     </c:forEach>
-    <p>Сумма заказа : ${basket.score}</p>
+    <h3>Сумма заказа : ${basket.score}</h3>
     <form action="${contextPath}/basket/toorder">
-        <button type="submit">Оформить</button>
+        <input type="submit" class="button-ss" value="Оформить"/>
     </form>
 </div>
 

@@ -1,13 +1,7 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
-<%--
-  Created by IntelliJ IDEA.
-  User: Александр
-  Date: 21.05.2017
-  Time: 1:18
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -25,13 +19,13 @@
     <div class="create-prod">
         <p>Создание продукта</p>
         <div>
-            <input type="text" name="productName" placeholder="product name" value="${product.productName}"/>
+            <input type="text" name="productName" placeholder="product name"/>
         </div>
         <div>
-            <input type="text" name="price" placeholder="product price" value="${product.price}"/>
+            <input type="text" name="price" placeholder="product price"/>
         </div>
         <div>
-            <input type="text" name="description" placeholder="product description" value="${product.description}"/>
+            <input type="text" name="description" placeholder="product description" />
         </div>
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     </div>

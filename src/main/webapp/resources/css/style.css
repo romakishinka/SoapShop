@@ -59,3 +59,93 @@ a:focus{color: #c6cf21; text-decoration: none;}
 
 }
 .btn-basket {padding-right: 30px !important;}
+
+.item_box {
+    border: 3px solid #278336 ;
+    width: 40%;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+}
+.item_box .item_title{
+    color: #278336;
+    padding-top: 15px;
+    padding-left: 50%;
+}
+.item_box .price {
+    padding-left: 60%;
+}
+.item_price {
+    color:#278336;
+}
+.button-ss {
+    color: #fff;
+    text-transform: uppercase;
+    border: 1px solid #276832;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    background-color: #278336;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 5px 10px 5px 10px;
+}
+.button-ss:hover {
+    -webkit-box-shadow: 1px 1px 2px rgba(32,97,43,0.44);
+    -moz-box-shadow: 1px 1px 2px rgba(32,97,43,0.44);
+    -o-box-shadow: 1px 1px 2px rgba(32,97,43,0.44);
+    box-shadow: 1px 1px 2px rgba(32,97,43,0.44);
+
+}
+.gallery img{
+    margin: auto;
+    padding-left: 30px;
+}
+.button-sss{
+    color: #fff;
+    text-transform: uppercase;
+    border: 1px solid #276832;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -o-border-radius: 8px;
+    border-radius: 8px;
+    background-color: #278336;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    padding: 5px 10px 5px 10px;
+}
+.input_field{
+    margin: 10px 10px 10px 60%;
+    width: 150px;
+}
+.link-ss{color: #73AE7D;}
+.link-ss:hover,
+.link-ss:focus{color: #c6cf21; text-decoration: none;}
+:focus{outline:none;}
+.order_box{
+    border: 3px solid #278336 ;
+    width: 50%;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -o-border-radius: 10px;
+    border-radius: 10px;
+}
+.order_title{
+    margin: auto;
+    color: #278336;
+    padding-top: 15px;
+    padding-left: 100px;;
+}
+.order_score{
+    margin: auto;
+    color: #278336;
+    padding-top: 15px;
+    padding-left: 50px;
+}
+.order_box table,tr,td {
+    border: 1px solid #278336 ;
+    padding: 5px 5px 5px 5px;
+}

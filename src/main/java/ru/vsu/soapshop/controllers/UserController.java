@@ -7,6 +7,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import ru.vsu.soapshop.model.Role;
 import ru.vsu.soapshop.model.User;
 import ru.vsu.soapshop.service.SecurityService;
 import ru.vsu.soapshop.service.UserService;
@@ -28,6 +29,7 @@ public class UserController {
     @Autowired
     private UserValidator userValidator;
 
+
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
     public String registration(Model model) {
         User user = new User();
@@ -48,8 +50,9 @@ public class UserController {
 
         securityService.autoLogin(userForm.getUsername(), userForm.getConfirmPassword());
 
-        return "redirect:/welcome";
+        return "redirect:/main";
     }
+
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(Model model, String error, String logout) {
@@ -66,11 +69,17 @@ public class UserController {
 
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public String admin(Model model) {
-        return "admin";
+        return "mainHeaderAdmin";
+
     }
 
-    @RequestMapping(value ={"/" ,"/main"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/", "/main"}, method = RequestMethod.GET)
     public String main(Model model) {
+        User user = userService.findByUsername(securityService.findLoggedInUsername());
+        for (Object obj : user.getRoles().toArray()) {
+            if (((Role) obj).getName().equals("ROLE_ADMIN"))
+                return "mainHeaderAdmin";
+        }
         return "main";
     }
 
