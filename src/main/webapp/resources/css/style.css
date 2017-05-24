@@ -62,11 +62,14 @@ a:focus{color: #c6cf21; text-decoration: none;}
 
 .item_box {
     border: 3px solid #278336 ;
-    width: 40%;
+    width: 30%;
+    height: 30%;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -o-border-radius: 10px;
     border-radius: 10px;
+    float: left;
+    margin: 10px;
 }
 .item_box .item_title{
     color: #278336;
@@ -118,7 +121,7 @@ a:focus{color: #c6cf21; text-decoration: none;}
     padding: 5px 10px 5px 10px;
 }
 .input_field{
-    margin: 10px 10px 10px 60%;
+    margin: 10px 10px 10px 40%;
     width: 150px;
 }
 .link-ss{color: #73AE7D;}
@@ -132,6 +135,8 @@ a:focus{color: #c6cf21; text-decoration: none;}
     -moz-border-radius: 10px;
     -o-border-radius: 10px;
     border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 .order_title{
     margin: auto;

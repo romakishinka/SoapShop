@@ -16,7 +16,7 @@
     <h2>Заказ номер ${basket.orderId}</h2>
     <c:forEach items="${basket.getOrderItems()}" var="item">
         <form action="${contextPath}/basket/${item.id}"  method="POST">
-            <div class="item_box">
+            <div class="item_box" style="float:none; height: auto">
                 <h3 class="item_title">${item.product.getProductName()}</h3>
                 <p>Стоимость: ${item.getScore()} </p>
                 <div>

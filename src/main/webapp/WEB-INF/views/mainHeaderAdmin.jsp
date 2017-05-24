@@ -42,14 +42,14 @@
             </div>
         </div>
     </header>
-    <div class="panel">
-        <div class="container">
-            <div class="row">
-                <a href="${contextPath}/products" class="btn">Каталог товаров</a>
-                <a href="${contextPath}/basket" class="btn btn-basket pull-right"> Корзина</a>
-            </div>
-        </div>
-    </div>
+    <%--<div class="panel">--%>
+        <%--<div class="container">--%>
+            <%--<div class="row">--%>
+                <%--<a href="${contextPath}/products" class="btn">Каталог товаров</a>--%>
+                <%--<a href="${contextPath}/basket" class="btn btn-basket pull-right"> Корзина</a>--%>
+            <%--</div>--%>
+        <%--</div>--%>
+    <%--</div>--%>
 </div>
 </body>
 </html>

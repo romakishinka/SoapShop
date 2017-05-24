@@ -15,5 +15,7 @@ public interface OrderService {
     void deleteOrder(Long id);
     void editOrder(Orders order);
     void addOrder(Orders order);
+    void changeStatus(Long id, int newStatus);
+    Orders fingById(Long id);
 
 }

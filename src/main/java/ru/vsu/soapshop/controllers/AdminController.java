@@ -5,7 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import ru.vsu.soapshop.model.Orders;
 import ru.vsu.soapshop.model.Product;
+import ru.vsu.soapshop.service.OrderService;
 import ru.vsu.soapshop.service.ProductService;
 import ru.vsu.soapshop.service.UserService;
 
@@ -23,6 +25,9 @@ public class AdminController {
 
     @Autowired
     UserService userService;
+
+    @Autowired
+    OrderService orderService;
 
     @RequestMapping(value="/products", method = RequestMethod.GET)
     public String showProduct(Model model){
@@ -76,5 +81,26 @@ public class AdminController {
     public String showUsers(Model model){
         model.addAttribute("users", userService.getAllUsers());
         return "usersAdmin";
+    }
+
+    @RequestMapping(value ="/users/changeStatus/{orderId}" , method =RequestMethod.GET)
+    public String changeOrder(@PathVariable("orderId") Long orderId){
+        orderService.changeStatus(orderId,3);
+        return "redirect:/admin/users";
+    }
+
+    @RequestMapping(value ="/users/delete/{orderId}" , method =RequestMethod.GET)
+    public String deleteOrder(@PathVariable("orderId") Long orderId){
+        orderService.deleteOrder(orderId);
+        return "redirect:/admin/users";
+    }
+
+    @RequestMapping(value ="/users/{userId}" , method =RequestMethod.GET)
+    public String deleteUsersOrder(@PathVariable("userId") Long userId){
+        List<Orders> orders = orderService.findAllUserOrders(userId);
+        for (Orders order: orders) {
+            orderService.deleteOrder(order.getOrderId());
+        }
+        return "redirect:/admin/users";
     }
 }

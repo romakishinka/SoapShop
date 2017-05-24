@@ -61,7 +61,7 @@ public class UserController {
         }
 
         if (logout != null) {
-            model.addAttribute("message", "Logged out successfully.");
+            model.addAttribute("message", "");
         }
 
         return "login";
@@ -76,6 +76,8 @@ public class UserController {
     @RequestMapping(value = {"/", "/main"}, method = RequestMethod.GET)
     public String main(Model model) {
         User user = userService.findByUsername(securityService.findLoggedInUsername());
+        if(user == null)
+            return "main";
         for (Object obj : user.getRoles().toArray()) {
             if (((Role) obj).getName().equals("ROLE_ADMIN"))
                 return "mainHeaderAdmin";

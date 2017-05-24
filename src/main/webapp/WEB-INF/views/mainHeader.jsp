@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Александр
@@ -35,7 +36,13 @@
                 </nav>
                 <nav class="h-nav pull-right">
                     <a href="${contextPath}/userOrders">${pageContext.request.userPrincipal.name}</a>
-                    <a onclick="document.forms['logoutForm'].submit()">Выйти</a>
+                    <c:if test="${ pageContext.request.userPrincipal.name != null}">
+                        <a onclick="document.forms['logoutForm'].submit()">Выйти</a>
+                    </c:if>
+                    <c:if test="${ pageContext.request.userPrincipal.name == null}">
+                        <a onclick="document.forms['logoutForm'].submit()">Войти</a>
+                    </c:if>
+
                 </nav>
             </div>
         </div>

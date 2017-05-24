@@ -15,7 +15,7 @@
 <c:forEach items="${orders}" var="order">
     <div class="container">
         <div class="order_box">
-            <h4 class="order_title">Заказ номер ${order.orderId}</h4>
+            <h4 class="order_title">Заказ номер ${order.orderId} (статус: ${order.status})</h4>
             <table class="order_table">
                 <tr>
                     <td>Наименование продукта</td>
@@ -31,6 +31,9 @@
                 </c:forEach>
             </table>
             <h4 class="order_score">Cумма заказа :  ${order.getScore()}</h4>
+            <form action="${contextPath}/userOrders/${order.getOrderId()}">
+                <input type="submit" class="button-ss" value ="Подтвердить получение"/>
+            </form>
         </div>
     </div>
 </c:forEach>

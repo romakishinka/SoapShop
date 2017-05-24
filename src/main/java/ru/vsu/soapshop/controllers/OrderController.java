@@ -49,7 +49,7 @@ public class OrderController {
         return "products";
     }
 
-    @RequestMapping(value = "/products", method = RequestMethod.POST)
+    @RequestMapping(value = "/products/addToBasket", method = RequestMethod.POST)
     public String addOrder(Model model, @RequestParam("code") Long productId) {
         Long orderId;
         Long userId = userService.findByUsername(securityService.findLoggedInUsername()).getId();
@@ -75,8 +75,14 @@ public class OrderController {
     @RequestMapping(value = "/userOrders", method = RequestMethod.GET)
     public String userOrders(Model model) {
         String username = securityService.findLoggedInUsername();
-        List<Orders> orders = orderService.findUserOrdersByStatus(userService.findByUsername(username).getId(),2);
+        List<Orders> orders = orderService.findAllUserOrders(userService.findByUsername(username).getId());
         model.addAttribute("orders", orders);
         return "userOrders";
+    }
+
+    @RequestMapping(value ="/userOrders/{orderId}", method =RequestMethod.GET)
+    public String confirmOrder(@PathVariable("orderId") Long orderId){
+        orderService.changeStatus(orderId,4);
+        return "redirect:/userOrders";
     }
 }

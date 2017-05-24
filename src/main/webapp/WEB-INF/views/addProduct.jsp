@@ -16,7 +16,7 @@
 <body>
 <jsp:include page="mainHeaderAdmin.jsp"/>
 <form action="${contextPath}/admin/products/new" method="post">
-    <div class="create-prod">
+    <div class="container">
         <p>Создание продукта</p>
         <div>
             <input type="text" name="productName" placeholder="product name"/>
@@ -29,7 +29,7 @@
         </div>
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     </div>
-    <button type ="submit">Сохранить</button>
+    <input type ="submit" class="button-ss" style="margin-left: 25%" value="Cохранить"/>
 </form>
 </body>
 </html>

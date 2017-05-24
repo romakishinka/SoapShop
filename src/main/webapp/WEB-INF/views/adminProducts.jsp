@@ -14,22 +14,21 @@
 <body>
 <jsp:include page="mainHeaderAdmin.jsp"/>
 <c:forEach items="${products}" var="product">
-    <form action="${contextPath}/admin/products/${product.productId}" method="GET">
-        <div class="item_box">
-            <h3 class="item_title">${product.productName}</h3>
-            <img src="${product.photo}">
-            <p>Цена: <span class="item_price">${product.price}</span>$</p>
-                <%--<input type="hidden" name="paramName" value="${product.productId}"/>--%>
-                <%--<input type="hidden" name="param" value="${param}"/>--%>
-            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                <%--<input type="text" name="amount" value="1"/>--%>
-            <input type="submit" value="Изменить">
-            <a href="${contextPath}/admin/products/${product.productId}/delete">Удалить</a>
-        </div>
-    </form>
+    <div class="container">
+        <form action="${contextPath}/admin/products/${product.productId}" method="GET">
+            <div class="item_box" style=" float:left ">
+                <h3 class="item_title">${product.productName}</h3>
+                <div class="gallery"><img src="${product.photo}"></div>
+                <p class="price">Цена: <span class="item_price">${product.price}</span>p</p>
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                <input type="submit" class="button-ss" value="Изменить">
+                <a href="${contextPath}/admin/products/${product.productId}/delete">Удалить</a>
+            </div>
+        </form>
+    </div>
 </c:forEach>
 <form action="${contextPath}/admin/products/new" method="GET">
-    <button type ="submit">создать продукт</button>
+    <input type="submit" value="создать продукт"/>
 </form>
 
 </body>
