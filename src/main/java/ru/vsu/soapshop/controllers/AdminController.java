@@ -7,8 +7,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import ru.vsu.soapshop.model.Orders;
 import ru.vsu.soapshop.model.Product;
+import ru.vsu.soapshop.model.User;
 import ru.vsu.soapshop.service.OrderService;
 import ru.vsu.soapshop.service.ProductService;
+import ru.vsu.soapshop.service.SecurityService;
 import ru.vsu.soapshop.service.UserService;
 
 import java.util.List;
@@ -28,6 +30,9 @@ public class AdminController {
 
     @Autowired
     OrderService orderService;
+
+    @Autowired
+    SecurityService securityService;
 
     @RequestMapping(value="/products", method = RequestMethod.GET)
     public String showProduct(Model model){
@@ -102,5 +107,12 @@ public class AdminController {
             orderService.deleteOrder(order.getOrderId());
         }
         return "redirect:/admin/users";
+    }
+
+    @RequestMapping(value ="/location/{username}" , method =RequestMethod.GET)
+    public String showUsersLocation(@PathVariable("username") String username, Model model){
+        User user = userService.findByUsername(username);
+        model.addAttribute("location", user.getLocation());
+        return "locationAdmin";
     }
 }

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import ru.vsu.soapshop.model.OrderItems;
 import ru.vsu.soapshop.model.Orders;
+import ru.vsu.soapshop.model.User;
 import ru.vsu.soapshop.service.OrderItemsService;
 import ru.vsu.soapshop.service.OrderService;
 import ru.vsu.soapshop.service.UserService;
@@ -64,7 +65,11 @@ public class BasketController {
     @RequestMapping(value = "/toorder", method = RequestMethod.GET)
     public String basketToOrder() {
         String userName = securityService.findLoggedInUsername();
-        Orders basket = orderService.findUserBasket(userService.findByUsername(userName).getId());
+        User user = userService.findByUsername(userName);
+        if(user.getLocation() == null){
+            return "redirect:/location";
+        }
+        Orders basket = orderService.findUserBasket(user.getId());
         basket.setStatus(2);
         orderService.editOrder(basket);
         return "redirect:/main";

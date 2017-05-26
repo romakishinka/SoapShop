@@ -23,7 +23,7 @@
 <jsp:include page="mainHeaderAdmin.jsp"/>
 <c:forEach items="${users}" var="user">
     <div class="container">
-        <h3>Заказы пользователя ${user.getUsername()}</h3>
+        <h3>Заказы пользователя <a href="/admin/location/${user.getUsername()}">${user.getUsername()}</a></h3>
         <c:forEach items="${user.orders}" var="order">
             <div class="order_box">
                 <h4 class="order_title">Заказ номер ${order.getOrderId()} (статус: ${order.status})</h4>

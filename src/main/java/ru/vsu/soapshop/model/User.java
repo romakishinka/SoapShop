@@ -21,6 +21,9 @@ public class User {
     @Column(name = "password")
     private String password;
 
+    @Column(name= "FIO")
+    private String fio;
+
     @Transient
     private String confirmPassword;
 
@@ -31,6 +34,25 @@ public class User {
 
     @OneToMany(mappedBy = "user", fetch= FetchType.EAGER)
     private List<Orders> orders;
+
+    public String getFio() {
+        return fio;
+    }
+
+    public void setFio(String fio) {
+        this.fio = fio;
+    }
+
+    @OneToOne(mappedBy = "user")
+    private Location location;
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
 
     public List<Orders> getOrders() {
         return orders;

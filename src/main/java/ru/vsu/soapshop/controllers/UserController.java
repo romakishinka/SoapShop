@@ -7,8 +7,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import ru.vsu.soapshop.model.Location;
 import ru.vsu.soapshop.model.Role;
 import ru.vsu.soapshop.model.User;
+import ru.vsu.soapshop.service.LocationService;
 import ru.vsu.soapshop.service.SecurityService;
 import ru.vsu.soapshop.service.UserService;
 import ru.vsu.soapshop.validator.UserValidator;
@@ -28,6 +30,9 @@ public class UserController {
 
     @Autowired
     private UserValidator userValidator;
+
+    @Autowired
+    private LocationService locationService;
 
 
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
@@ -90,5 +95,18 @@ public class UserController {
         return "about";
     }
 
+    @RequestMapping(value ="/location", method=RequestMethod.GET)
+    public String getLocation(Model model){
+        model.addAttribute("location", new Location());
+        return "location";
+    }
+
+    @RequestMapping(value ="/location", method = RequestMethod.POST)
+    public String getLocation(@ModelAttribute("location") Location location){
+        User user = userService.findByUsername(securityService.findLoggedInUsername());
+        location.setUserId(user.getId());
+        locationService.saveLocation(location);
+        return "redirect:/basket/toorder";
+    }
 
 }

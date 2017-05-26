@@ -3,7 +3,7 @@ package ru.vsu.soapshop.service;
 
 import ru.vsu.soapshop.model.OrderItems;
 
-import javax.persistence.criteria.Order;
+
 import java.util.List;
 
 /**
