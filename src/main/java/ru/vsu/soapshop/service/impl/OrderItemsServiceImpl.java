@@ -3,8 +3,10 @@ package ru.vsu.soapshop.service.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.vsu.soapshop.model.OrderItems;
+import ru.vsu.soapshop.model.Orders;
 import ru.vsu.soapshop.repository.OrderItemsRepository;
 import ru.vsu.soapshop.service.OrderItemsService;
+import ru.vsu.soapshop.service.OrderService;
 
 import java.util.List;
 
@@ -16,9 +18,15 @@ public class OrderItemsServiceImpl implements OrderItemsService{
 
     @Autowired
     OrderItemsRepository orderItemsRepository;
+
+    @Autowired
+    OrderService orderService;
     @Override
     public void deleteOrderItems(Long id) {
+        Orders order = orderService.fingById(orderItemsRepository.findById(id).getOrderId());
         orderItemsRepository.delete(id);
+        if (order.getOrderItems() == null)
+            orderService.deleteOrder(order.getOrderId());
     }
 
     @Override

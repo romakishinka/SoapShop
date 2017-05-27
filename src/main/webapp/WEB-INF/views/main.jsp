@@ -39,27 +39,27 @@
         </div>
     </div>
     <div class="item_box">
-        <h3 class="item_title">Product #123</h3>
-        <div class="gallery"><img src="/resources/img/photo.jpeg"></div>
-        <p class="price">Цена: <span class="item_price">230</span>P</p>
+        <h3 class="item_title">Мыло "Ландыш"</h3>
+        <div class="gallery"><img src="/resources/img/photo5.jpeg"></div>
+        <p class="price">Цена: <span class="item_price">300</span>P</p>
         <form action="${contextPath}/products" method="GET">
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <input type="submit" class="button-ss" value="Добавить">
         </form>
     </div>
     <div class="item_box">
-        <h3 class="item_title">Product #124</h3>
-        <div class="gallery"><img src="/resources/img/photo.jpeg"></div>
-        <p class="price">Цена: <span class="item_price">400</span>P</p>
+        <h3 class="item_title">Мыло "Ваниль"</h3>
+        <div class="gallery"><img src="/resources/img/photo8.jpeg"></div>
+        <p class="price">Цена: <span class="item_price">350</span>P</p>
         <form action="${contextPath}/products" method="GET">
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <input type="submit" class="button-ss" value="Добавить">
         </form>
     </div>
     <div class="item_box">
-        <h3 class="item_title">Product #124</h3>
-        <div class="gallery"><img src="/resources/img/photo.jpeg"></div>
-        <p class="price">Цена: <span class="item_price">600</span>P</p>
+        <h3 class="item_title">Мыло "Миша"</h3>
+        <div class="gallery"><img src="/resources/img/photo7.jpeg"></div>
+        <p class="price">Цена: <span class="item_price">300</span>P</p>
         <form action="${contextPath}/products" method="GET">
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <input type="submit" class="button-ss" value="Добавить">
@@ -70,32 +70,32 @@
     <div class="panel">
         <div class="container">
             <div class="row">
-                <a href="${contextPath}/products" class="btn" style="margin-left:40%; padding-left: 40px;padding-right: 40px; ">Скидки</a>
+                <a href="${contextPath}/products" class="btn" style="margin-left:40%; padding-left: 40px;padding-right: 40px; ">Популярное</a>
             </div>
         </div>
     </div>
     <div class="item_box">
-        <h3 class="item_title">Product #123</h3>
-        <div class="gallery"><img src="/resources/img/photo.jpeg"></div>
-        <p class="price">Цена: <span class="item_price">230</span>P</p>
+        <h3 class="item_title">Мыло "Роза"</h3>
+        <div class="gallery"><img src="/resources/img/photo6.jpeg"></div>
+        <p class="price">Цена: <span class="item_price">300</span>P</p>
         <form action="${contextPath}/products" method="GET">
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <input type="submit" class="button-ss" value="Добавить">
         </form>
     </div>
     <div class="item_box">
-        <h3 class="item_title">Product #124</h3>
-        <div class="gallery"><img src="/resources/img/photo.jpeg"></div>
-        <p class="price">Цена: <span class="item_price">400</span>P</p>
+        <h3 class="item_title">Мыло "Виноград"</h3>
+        <div class="gallery"><img src="/resources/img/photo2.jpeg"></div>
+        <p class="price">Цена: <span class="item_price">340</span>P</p>
         <form action="${contextPath}/products" method="GET">
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <input type="submit" class="button-ss" value="Добавить">
         </form>
     </div>
     <div class="item_box">
-        <h3 class="item_title">Product #124</h3>
-        <div class="gallery"><img src="/resources/img/photo.jpeg"></div>
-        <p class="price">Цена: <span class="item_price">600</span>P</p>
+        <h3 class="item_title">Мыло "Звезда"</h3>
+        <div class="gallery"><img src="/resources/img/photo9.jpeg"></div>
+        <p class="price">Цена: <span class="item_price">290</span>P</p>
         <form action="${contextPath}/products" method="GET">
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <input type="submit" class="button-ss" value="Добавить">
@@ -111,27 +111,27 @@
         </div>
     </div>
     <div class="item_box">
-        <h3 class="item_title">Product #123</h3>
-        <div class="gallery"><img src="/resources/img/photo.jpeg"></div>
-        <p class="price">Цена: <span class="item_price">230</span>P</p>
+        <h3 class="item_title">Мыло "Шар" (синий)</h3>
+        <div class="gallery"><img src="/resources/img/photo12.jpeg"></div>
+        <p class="price">Цена: <span class="item_price">250</span>P</p>
         <form action="${contextPath}/products" method="GET">
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <input type="submit" class="button-ss" value="Добавить">
         </form>
     </div>
     <div class="item_box">
-        <h3 class="item_title">Product #124</h3>
-        <div class="gallery"><img src="/resources/img/photo.jpeg"></div>
-        <p class="price">Цена: <span class="item_price">400</span>P</p>
+        <h3 class="item_title">Мыло "Шар" (красный)</h3>
+        <div class="gallery"><img src="/resources/img/photo11.jpeg"></div>
+        <p class="price">Цена: <span class="item_price">250</span>P</p>
         <form action="${contextPath}/products" method="GET">
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <input type="submit" class="button-ss" value="Добавить">
         </form>
     </div>
     <div class="item_box">
-        <h3 class="item_title">Product #124</h3>
-        <div class="gallery"><img src="/resources/img/photo.jpeg"></div>
-        <p class="price">Цена: <span class="item_price">600</span>P</p>
+        <h3 class="item_title">Мыло "Ваниль"</h3>
+        <div class="gallery"><img src="/resources/img/photo8.jpeg"></div>
+        <p class="price">Цена: <span class="item_price">300</span>P</p>
         <form action="${contextPath}/products" method="GET">
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <input type="submit" class="button-ss" value="Добавить">

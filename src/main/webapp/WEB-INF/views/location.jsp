@@ -36,7 +36,7 @@
                         placeholder="Номер дома"></form:input>
         </div>
 
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">СОХРАНИТЬ</button>
     </form:form>
 
 </div>

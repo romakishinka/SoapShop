@@ -47,6 +47,7 @@ public class User {
     private Location location;
 
     public Location getLocation() {
+
         return location;
     }
 

@@ -34,6 +34,7 @@ public class BasketController {
     @Autowired
     UserService userService;
 
+    /*добавляет в модель корзину пользователя*/
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String basket(Model model) {
         String userName = securityService.findLoggedInUsername();
@@ -55,7 +56,7 @@ public class BasketController {
         return "redirect:/basket";
     }
 
-
+    /*удаляет элемент заказа из корзины*/
     @RequestMapping(value = "/{orderItemId}/delete", method = RequestMethod.GET)
     public String deleteItem(@PathVariable("orderItemId") Long itemId) {
         orderItemsService.deleteOrderItems(itemId);

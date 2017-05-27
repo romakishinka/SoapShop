@@ -19,13 +19,16 @@
     <div class="container">
         <p>Создание продукта</p>
         <div>
-            <input type="text" name="productName" placeholder="product name"/>
+            <input type="text" name="productName" placeholder="Название продукта"/>
         </div>
         <div>
-            <input type="text" name="price" placeholder="product price"/>
+            <input type="text" name="price" placeholder="Стоимость"/>
         </div>
         <div>
-            <input type="text" name="description" placeholder="product description" />
+            <input type="text" name="description" placeholder="Описание" />
+        </div>
+        <div>
+            <button class = "button-sss">Добавить картинку</button>
         </div>
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
     </div>

@@ -63,13 +63,14 @@ a:focus{color: #c6cf21; text-decoration: none;}
 .item_box {
     border: 3px solid #278336 ;
     width: 30%;
-    height: 30%;
+    height: 40%;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -o-border-radius: 10px;
     border-radius: 10px;
     float: left;
     margin: 10px;
+    background: #ffffff;
 }
 .item_box .item_title{
     color: #278336;

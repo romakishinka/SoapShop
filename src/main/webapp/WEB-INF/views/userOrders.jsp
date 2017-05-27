@@ -15,7 +15,21 @@
 <c:forEach items="${orders}" var="order">
     <div class="container">
         <div class="order_box">
-            <h4 class="order_title">Заказ номер ${order.orderId} (статус: ${order.status})</h4>
+            <h4 class="order_title">Заказ номер ${order.orderId} (статус:
+                <c:if test="${order.status == 1}">
+                    в корзине
+                </c:if>
+                <c:if test="${order.status == 2}">
+                    оформлен
+                </c:if>
+                <c:if test="${order.status == 3}">
+                    отправлен
+                </c:if>
+                <c:if test="${order.status == 4}">
+                    плучен
+                </c:if>
+                )
+            </h4>
             <table class="order_table">
                 <tr>
                     <td>Наименование продукта</td>

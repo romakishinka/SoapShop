@@ -15,12 +15,14 @@
     <h4 class="order_title">Местоположение пользователя: ${location.getUser().getUsername()} </h4>
     <table class="order-table">
         <tr>
+            <td>ФИО</td>
             <td>Страна</td>
             <td>Город</td>
             <td>Улица</td>
-            <td>дом</td>
+            <td>Дом</td>
         </tr>
             <tr>
+                <td>${location.getUser().getFio()}</td>
                 <td>${location.getContry()}</td>
                 <td>${location.getCity()}</td>
                 <td>${location.getStreet()}</td>

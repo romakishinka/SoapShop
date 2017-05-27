@@ -26,7 +26,21 @@
         <h3>Заказы пользователя <a href="/admin/location/${user.getUsername()}">${user.getUsername()}</a></h3>
         <c:forEach items="${user.orders}" var="order">
             <div class="order_box">
-                <h4 class="order_title">Заказ номер ${order.getOrderId()} (статус: ${order.status})</h4>
+                <h4 class="order_title">Заказ номер ${order.getOrderId()} (статус:
+                    <c:if test="${order.status == 1}">
+                        в корзине
+                    </c:if>
+                    <c:if test="${order.status == 2}">
+                        оформлен
+                    </c:if>
+                    <c:if test="${order.status == 3}">
+                        отправлен
+                    </c:if>
+                    <c:if test="${order.status == 4}">
+                        плучен
+                    </c:if>
+                    )
+                </h4>
                 <table class="order-table">
                     <tr>
                         <td>Наименование продукта</td>
