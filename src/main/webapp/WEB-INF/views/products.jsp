@@ -40,7 +40,7 @@
 
 <!-- FOOTER -->
 <footer>
-    <small>Netyaga Alexander</small>
+    <small>Kishinka Roman</small>
 </footer>
 </body>
 </html>

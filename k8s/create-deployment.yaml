@@ -1,0 +1,37 @@
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name:   soapshop-deployment
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: soapshop
+    spec:
+      containers:
+      - name: soapshop
+        image: soapshop
+        ports:
+        - containerPort: 9977
+        resources:
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+          requests:
+            memory: "256Mi"
+            cpu: "200m"
+        livenessProbe:
+          httpGet:
+            path: /actuator/health/liveness
+            port: 9977
+          initialDelaySeconds: 60
+          periodSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /actuator/health/readiness
+            port: 9977
+          initialDelaySeconds: 60
+          timeoutSeconds: 5
+
+

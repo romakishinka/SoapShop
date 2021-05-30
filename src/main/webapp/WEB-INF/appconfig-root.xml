@@ -12,7 +12,7 @@
 
     <import resource="appconfig-security.xml"/>
 
-    <context:component-scan base-package="ru.vsu.soapshop.*"/>
+    <context:component-scan base-package="ru.vspu.soapshop.*"/>
 
     <context:property-placeholder location="classpath:database.properties"/>
 

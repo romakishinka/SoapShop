@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Александр
+  User: Roman Kishinka
   Date: 21.05.2017
   Time: 15:23
   To change this template use File | Settings | File Templates.
@@ -140,7 +140,7 @@
 </div>
 <!-- FOOTER -->
 <footer>
-    <small>Netyaga Alexander</small>
+    <small>Kishinka Roman</small>
 </footer>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
